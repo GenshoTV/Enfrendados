@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1748383593 source:c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+
+1748387368 source:c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\funciones.cpp
+	<iostream>
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+
+1748236834 c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\funciones.h
+
+1571584339 c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
