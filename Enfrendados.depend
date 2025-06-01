@@ -29,3 +29,33 @@
 	<sys/types.h>
 	<sys/time.h>
 
+1748383593 source:c:\users\marti\desktop\facultad\programacion\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+
+1748809477 c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.h
+
+1571584339 c:\users\marti\desktop\facultad\programacion\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1748805015 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
+	<iostream>
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+

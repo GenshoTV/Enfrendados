@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include "rlutil.h"
 #include <ctime>
+#include <string>
+
 using namespace std;
 
     int dados6 = 6;
@@ -133,25 +135,28 @@ void menu(){
     return rand() % CarasDados + 1;
     }
 
-
-
-void jugar()
-{
+    void PedirNombresJugadores(){
     string jugador1;
     string jugador2;
-    int dado1;
-    int dado2;
 
     rlutil::cls();    rlutil::locate(30,12);
     cout << "Ingrese su nombre jugador/a 1: ";
     cin >> jugador1;
-
     rlutil::cls();
     rlutil::locate(30,12);
     cout << "Ingrese su nombre jugador/a 2: ";
     cin >> jugador2;
+    QuienEmpiezaRonda(jugador1,jugador2)
 
     rlutil::cls();
+    }
+
+
+void QuienEmpiezaRonda(string jugador1, string jugador2)
+{
+
+    int dado1;
+    int dado2;
 
     rlutil::locate(30,2);
     cout << jugador1 << " tira su dado.. " << endl;
@@ -163,7 +168,6 @@ void jugar()
     dado2 = tirarDado(dados6);
     rlutil::locate(30,5);
     cout << "El dado de "<< jugador2 << " es: " << dado2 << endl;
-
 
 
     while (dado1 == dado2) {
@@ -181,13 +185,17 @@ void jugar()
 
     if (dado1 > dado2){
         rlutil::locate(30,7);
-        cout << jugador1 << " Inicia la ronda." << endl;
+        cout << jugador1 << endl;
     } else {
         rlutil::locate(30,7);
-        cout << jugador2 << " Inicia la ronda." << endl;
+        cout << jugador2 << endl;
     }
-    system("pause");
 }
+
+
+
+
+
 
 
 
