@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "funciones.h"
 #include <cstdlib>
 #include "rlutil.h"
@@ -7,42 +7,49 @@
 
 using namespace std;
 
-    int dados6 = 6;
-    int dados12 = 12;
+int dados6 = 6;
+int dados12 = 12;
 
-void LineaHorizontal(int inicioX, int finX, int posicionY, char esquinaIzq, char esquinaDer){
+void LineaHorizontal(int inicioX, int finX, int posicionY, char esquinaIzq, char esquinaDer)
+{
 
     rlutil::locate(inicioX, posicionY);
     cout << esquinaIzq; /// É
 
-    for (int i = inicioX + 1; i < finX; i++){
+    for (int i = inicioX + 1; i < finX; i++)
+    {
         cout << "Í";
     }
-        cout<< esquinaDer; /// »
+    cout<< esquinaDer; /// »
 }
 
-void LineaVertical(int posicionX, int inicioY, int finY){ /// Dibuja una linea en vertical en Y
+void LineaVertical(int posicionX, int inicioY, int finY)  /// Dibuja una linea en vertical en Y
+{
 
-    for (int i = inicioY + 1; i < finY; i++) {
-            rlutil::locate(posicionX, i);
+    for (int i = inicioY + 1; i < finY; i++)
+    {
+        rlutil::locate(posicionX, i);
         cout << "º";
     }
 }
 
-void Cuadro(int inicioX, int inicioY, int finX, int finY) {
-    LineaHorizontal(inicioX, finX, inicioY, 'É' , '»');
-    LineaHorizontal(inicioX, finX, finY,    'È' , '¼');
+void Cuadro(int inicioX, int inicioY, int finX, int finY)
+{
+    LineaHorizontal(inicioX, finX, inicioY, 'É', '»');
+    LineaHorizontal(inicioX, finX, finY,    'È', '¼');
 
     LineaVertical(inicioX, inicioY, finY);
     LineaVertical(finX, inicioY, finY);
 }
 
-void menu(){
+void menu()
+{
     int opciones = 9, PosicionY;
 
     rlutil::hidecursor(); /// Oculta el cursor de la pantalla
     Cuadro(25,11,48,16);
-    do{
+    do
+    {
         rlutil::cls();
 
         ///    X  Y   X  Y
@@ -54,12 +61,12 @@ void menu(){
         Y2 = ABAJO
         */
         rlutil::locate(29,5); /// Ubica en pantalla los couts (x, y)
-    cout << "­BIENVENIDOS A...\n"
-            "    _______   ____________  _______    ______  ___    ____  ____  _____\n"
-            "   / ____/ | / / ____/ __ \\/ ____/  | / / __ \\/   |  / __ \\/ __ \\/ ___/ \n"
-            "  / __/ /  |/ / /_  / /_/ / __/ /   |/ / / / / /| | / / / / / / /\\__  \\ \n"
-            " / /___/ /|  / __/ / _, _/ /___/ /|  / / _/ / ___  |//_/ / /_/ /___/ /\n"
-            "/_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/ _/  |_/_____/\____//_____/\n" << endl;
+        cout << "­BIENVENIDOS A...\n"
+             "    _______   ____________  _______    ______  ___    ____  ____  _____\n"
+             "   / ____/ | / / ____/ __ \\/ ____/  | / / __ \\/   |  / __ \\/ __ \\/ ___/ \n"
+             "  / __/ /  |/ / /_  / /_/ / __/ /   |/ / / / / /| | / / / / / / /\\__  \\ \n"
+             " / /___/ /|  / __/ / _, _/ /___/ /|  / / _/ / ___  |//_/ / /_/ /___/ /\n"
+             "/_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/ _/  |_/_____/\____//_____/\n" << endl;
 
 
         rlutil::locate(30,12);
@@ -85,78 +92,90 @@ void menu(){
 
         int tecla = rlutil::getkey(); /// devuelve un entero que representa la letra que presiono en el teclado
 
-        switch(tecla){
+        switch(tecla)
+        {
         /// ¨Por qu‚ 0?, por que no quiero que vaya m s de arriba (0 = JUGAR)
         case 14: /// Arriba
             PosicionY--;
-            if(PosicionY < 0){
+            if(PosicionY < 0)
+            {
                 PosicionY = 0;
             }
             break;
         /// Puede moverse 3 casillas a partir del 0 (0,1,2,3)
         case 15: /// Abajo
             PosicionY++;
-            if(PosicionY > 3){
+            if(PosicionY > 3)
+            {
                 PosicionY = 3;
             }
             break;
         case 1: /// Enter
+        {
+            switch(PosicionY)
             {
-                switch(PosicionY){
             case 0:
-                jugar();
-            break;
-                case 3:
-                    /// SALIR
-                    opciones = 0;
-                    rlutil::cls();
-                    Cuadro(25,3,55,5);
-                    /*
-                    X1 = IZQ
-                    Y1 = ARRIBA
-                    X2 = DER (Si sumo se agranda, si resto se resta :D)
-                    Y2 = ABAJO
-                    */
-                    rlutil::locate(30,4);
-                    cout << "Hasta la vista, baby" << endl;
-                }
+                PedirNombresJugadores();
                 break;
+            case 3:
+                /// SALIR
+                opciones = 0;
+                rlutil::cls();
+                Cuadro(25,3,55,5);
+                /*
+                X1 = IZQ
+                Y1 = ARRIBA
+                X2 = DER (Si sumo se agranda, si resto se resta :D)
+                Y2 = ABAJO
+                */
+                rlutil::locate(30,4);
+                cout << "Hasta la vista, baby" << endl;
             }
+            break;
+        }
         rlutil::locate(26, 12 + PosicionY);
         cout << (char)175 << endl;
 
         }
-    }while(opciones != 0);
+    }
+    while(opciones != 0);
 }
 
 
 
-    int tirarDado(int CarasDados){
+int tirarDado(int CarasDados)
+{
     return rand() % CarasDados + 1;
-    }
+}
 
-    void PedirNombresJugadores(){
+
+void PedirNombresJugadores()
+{
     string jugador1;
     string jugador2;
 
-    rlutil::cls();    rlutil::locate(30,12);
+    rlutil::cls();
+    rlutil::locate(30,12);
     cout << "Ingrese su nombre jugador/a 1: ";
     cin >> jugador1;
     rlutil::cls();
     rlutil::locate(30,12);
     cout << "Ingrese su nombre jugador/a 2: ";
     cin >> jugador2;
-    QuienEmpiezaRonda(jugador1,jugador2)
-
     rlutil::cls();
-    }
+    QuienEmpiezaRonda(jugador1,jugador2);
+    system("pause");
 
 
+}
+
+// VER EN CASO QUE EMPATE SE VEAN LOS NUEVOS RESULTADOS.
 void QuienEmpiezaRonda(string jugador1, string jugador2)
 {
 
     int dado1;
     int dado2;
+    string ganador;
 
     rlutil::locate(30,2);
     cout << jugador1 << " tira su dado.. " << endl;
@@ -170,28 +189,45 @@ void QuienEmpiezaRonda(string jugador1, string jugador2)
     cout << "El dado de "<< jugador2 << " es: " << dado2 << endl;
 
 
-    while (dado1 == dado2) {
-    rlutil::locate(30,6);
-        cout << "Empate. Vuelven a tirar los dados.\n";
+    while (dado1 == dado2)
+    {
+        rlutil::locate(30,6);
+        cout << "Empate. Vuelven a   tirar los dados.\n";
 
         dado1 = tirarDado(dados6);
         dado2 = tirarDado(dados6);
 
-    rlutil::locate(30,7);
+        rlutil::locate(30,7);
         cout << jugador1 << " saco: " << dado1 << endl;
-    rlutil::locate(30,8);
+        rlutil::locate(30,8);
         cout << jugador2 << " saco: " << dado2 << endl;
     }
 
-    if (dado1 > dado2){
+    if (dado1 > dado2)
+    {
         rlutil::locate(30,7);
-        cout << jugador1 << endl;
-    } else {
-        rlutil::locate(30,7);
-        cout << jugador2 << endl;
+        cout << " Empieza: " << jugador1 << endl;
+        ganador = jugador1;
     }
+    else
+    {
+        rlutil::locate(30,7);
+        cout << " Empieza: " << jugador2 << endl;
+        ganador = jugador2;
+    }
+        jugar(jugador1,jugador2,ganador);
+
 }
 
+
+void jugar(string jugador1,string jugador2,string ganador)
+{
+
+        cout << jugador1 << " jugador1: " << endl;
+        cout << jugador2 << " jugador2: " << endl;
+        cout << ganador  << " ganador: "  << endl;
+
+}
 
 
 
