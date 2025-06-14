@@ -10,7 +10,7 @@ void QuienEmpiezaRonda(string jugador1, string jugador2);
 void turnoJugador(string nombre, int& stock, int& puntos, int& dadosUsados,int& stockContrincante);
 void jugar(string jugador1, string jugador2);
 int tirarDado(int CarasDados);
-void mostrarEstadisticas(); // falta hacer
+void estadisticas(); // falta hacer
 void mostrarCreditos(); // falta agregar al codigo
 bool confirmarSalida(); // falta agregar al codigo
 void actualizarEstadisticas(string jugador, int puntaje); // falta hacer

@@ -59,7 +59,7 @@
 	"rlutil.h"
 	<ctime>
 
-1749772693 source:c:\users\mauro\desktop\proyecto\enfrendados\funciones.cpp
+1749926067 source:c:\users\mauro\desktop\proyecto\enfrendados\funciones.cpp
 	"funciones.h"
 	<cstdlib>
 	"rlutil.h"
@@ -67,7 +67,7 @@
 	<string>
 	<vector>
 
-1749778535 c:\users\mauro\desktop\proyecto\enfrendados\funciones.h
+1749929059 c:\users\mauro\desktop\proyecto\enfrendados\funciones.h
 	<string>
 
 1748813792 c:\users\mauro\desktop\proyecto\enfrendados\rlutil.h
@@ -84,7 +84,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1749611924 source:c:\users\mauro\desktop\proyecto\enfrendados\main.cpp
+1749925116 source:c:\users\mauro\desktop\proyecto\enfrendados\main.cpp
 	<iostream>
 	<cstdlib>
 	"funciones.h"
