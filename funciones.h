@@ -5,14 +5,14 @@
 using namespace std;
 
 void menu();
-void PedirNombresJugadores();
-void QuienEmpiezaRonda(string jugador1, string jugador2);
+void PedirNombresJugadores(int &puntosMax,string &jugadorMax);
+void QuienEmpiezaRonda(string jugador1, string jugador2,int &puntosMax,string &jugadorMax);
 void turnoJugador(string nombre, int& stock, int& puntos, int& dadosUsados,int& stockContrincante);
-void jugar(string jugador1, string jugador2);
+void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax);
 int tirarDado(int CarasDados);
 void estadisticas(); // falta hacer
-void mostrarCreditos(); // falta agregar al codigo
-bool confirmarSalida(); // falta agregar al codigo
+void Creditos(); //Agregar debe mostrar los apellidos, nombres y legajos de los integrantes del equipo. Así como también el nombre del equipo.
+bool confirmarSalida(); //poner como se llama la funcio nrealmente.
 void actualizarEstadisticas(string jugador, int puntaje); // falta hacer
 
 // Funciones de del rlutil estas se declaran?

@@ -47,7 +47,7 @@ void Creditos()
     rlutil::locate(30,13);
     cout <<"Martin Daniel Guerreño" << endl;
     rlutil::locate(33,14);
-    cout <<"Mauro Sinopoli " << endl;
+    cout <<"Mauro Sinopoli LEGAJO: 31747" << endl;
     rlutil::locate(33,15);
     cout <<"Agustin Salto " << endl;
     rlutil::locate(30,16);
@@ -55,16 +55,30 @@ void Creditos()
 }
 
 
-void estadisticas(int &puntosMax,string &jugadorMax){
-    int puntajeMaximo = puntosMax;
-    int jugador = jugadorMax;
 
-    cout << "Puntos" << puntosMax << "Jugador" << jugadorMax;
+void estadisticas(int &puntosMax,string &jugadorMax)
+{
+
+    cout << "Puntos" << puntosMax << "Nombre jugador" << jugadorMax << endl;
+
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    system("pause");
+
 
 };
 
+
+
 void menu()
 {
+    int puntosMax;
+    string jugadorMax;
+
 
     int opciones = 10, PosicionY;
 
@@ -127,10 +141,12 @@ void menu()
             switch(PosicionY)
             {
             case 0:
-                PedirNombresJugadores();
+                PedirNombresJugadores(puntosMax,jugadorMax);
                 break;
             case 1:
-                estadisticas();
+                rlutil::cls();
+                estadisticas(puntosMax,jugadorMax);
+                break;
             case 2:
                 rlutil::cls();
                 Cuadro(27,10,54,17);
@@ -216,7 +232,7 @@ int tirarDado(int CarasDados)
 
 
 //pedirmos nombre por cin y se los pasamos a quienEmpiezaRonda()
-void PedirNombresJugadores()
+void PedirNombresJugadores(int &puntosMax,string &jugadorMax)
 {
     string jugador1;
     string jugador2;
@@ -230,12 +246,12 @@ void PedirNombresJugadores()
     cout << "Ingrese su nombre jugador/a 2: ";
     cin >> jugador2;
     rlutil::cls();
-    QuienEmpiezaRonda(jugador1, jugador2);
+    QuienEmpiezaRonda(jugador1,jugador2,puntosMax,jugadorMax);
     system("pause");
 }
 
 // Realiza el sorteo de quien empieza.
-void QuienEmpiezaRonda(string jugador1, string jugador2)
+void QuienEmpiezaRonda(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
 {
 
     int dado1;
@@ -273,14 +289,14 @@ void QuienEmpiezaRonda(string jugador1, string jugador2)
         rlutil::locate(30,9);
         cout << "Empieza: " << jugador1 << endl;
         ganador = jugador1;
-        jugar(jugador1, jugador2);
+        jugar(jugador1, jugador2,puntosMax,jugadorMax);
     }
     else
     {
         rlutil::locate(30,9);
         cout << "Empieza: " << jugador2 << endl;
         ganador = jugador2;
-        jugar(jugador2,jugador1);
+        jugar(jugador2,jugador1,puntosMax,jugadorMax);
     }
 }
 //recibimos por parametro las referencias a ser modificadas entre rondas.
@@ -293,7 +309,7 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
     // Vector inicializado en 12 posiciones.
     int dados[maximosDados];
     // Vector booleanos para marcar dados ya utilizados.
-    bool usados[maximosDados]={false};
+    bool usados[maximosDados]= {false};
     // Inicia en 0 los dados utilizados.
     dadosUsados = 0;
 
@@ -430,7 +446,7 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
 
 
 // funcion jugar se encarga de los stocks de dados y puntaje,le pasa a turnojugador por parametros de referencia stock,puntos,usados,objetivo.
-void jugar(string jugador1, string jugador2)
+void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
 {
     // cantidad de rondas iniciales
     const int rondas = 3;
@@ -497,6 +513,7 @@ void jugar(string jugador1, string jugador2)
         cout << jugador1 << ": " << puntosJ1 << " puntos | Dados: " << stockJ1 << endl;
         cout << jugador2 << ": " << puntosJ2 << " puntos | Dados: " << stockJ2 << endl;
 
+
     }
 
     // Resultado final al salir del ciclo
@@ -505,16 +522,35 @@ void jugar(string jugador1, string jugador2)
     cout << jugador2 << ": " << puntosJ2 << " puntos | Dados: " << stockJ2 << endl;
 
 
-    if (puntosJ1 > puntosJ2){
+    if (puntosJ1 > puntosJ2)
+    {
         cout << "Ganador: " << jugador1 << " \n";
-        estadisticas(puntosJ1,jugador1);
+        if(puntosJ1 > puntosMax)
+        {
+            puntosMax = puntosJ1;
+            jugadorMax = jugador1;
         }
-    else if (puntosJ2 > puntosJ1){
+
+
+
+    }
+    else if (puntosJ2 > puntosJ1)
+    {
         cout << "Ganador: " << jugador2 << " \n";
-        estadisticas(puntosJ2,jugador2);
+        if(puntosJ2 > puntosMax)
+        {
+            puntosMax = puntosJ2;
+            jugadorMax = jugador2;
+        }
+
     }
     else
+    {
         cout << "¡Empate!\n";
+
+    }
+
+
 }
 
 
