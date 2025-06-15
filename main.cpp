@@ -3,6 +3,7 @@
 #include "funciones.h"
 #include "rlutil.h"
 #include <ctime>
+#include <windows.h>
 
 using namespace std;
 

@@ -29,16 +29,18 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1748383593 source:c:\users\marti\desktop\facultad\programacion\enfrendados\main.cpp
+1749935704 source:c:\users\marti\desktop\facultad\programacion\enfrendados\main.cpp
 	<iostream>
 	<cstdlib>
 	"funciones.h"
 	"rlutil.h"
 	<ctime>
+	<windows.h>
 
-1748809477 c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.h
+1749935737 c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.h
+	<string>
 
-1571584339 c:\users\marti\desktop\facultad\programacion\enfrendados\rlutil.h
+1749935528 c:\users\marti\desktop\facultad\programacion\enfrendados\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -52,22 +54,23 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1748805015 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
-	<iostream>
-	"funciones.h"
-	<cstdlib>
-	"rlutil.h"
-	<ctime>
-
-1748813792 source:c:\users\mauro\desktop\proyecto\enfrendados\funciones.cpp
-	<iostream>
+1749961736 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
 	"funciones.h"
 	<cstdlib>
 	"rlutil.h"
 	<ctime>
 	<string>
+	<vector>
 
-1748814302 c:\users\mauro\desktop\proyecto\enfrendados\funciones.h
+1749934677 source:c:\users\mauro\desktop\proyecto\enfrendados\funciones.cpp
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+	<string>
+	<vector>
+
+1749933740 c:\users\mauro\desktop\proyecto\enfrendados\funciones.h
 	<string>
 
 1748813792 c:\users\mauro\desktop\proyecto\enfrendados\rlutil.h
@@ -84,10 +87,44 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1748813792 source:c:\users\mauro\desktop\proyecto\enfrendados\main.cpp
+1749925116 source:c:\users\mauro\desktop\proyecto\enfrendados\main.cpp
 	<iostream>
 	<cstdlib>
 	"funciones.h"
 	"rlutil.h"
 	<ctime>
+	<windows.h>
+
+1749961736 source:c:\users\marti\desktop\carpeta\enfrendados\funciones.cpp
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+	<string>
+	<vector>
+
+1749935737 c:\users\marti\desktop\carpeta\enfrendados\funciones.h
+	<string>
+
+1749935528 c:\users\marti\desktop\carpeta\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1749935704 source:c:\users\marti\desktop\carpeta\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+	<windows.h>
 
