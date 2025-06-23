@@ -37,7 +37,7 @@
 	<ctime>
 	<windows.h>
 
-1749935737 c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.h
+1750661553 c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.h
 	<string>
 
 1749935528 c:\users\marti\desktop\facultad\programacion\enfrendados\rlutil.h
@@ -54,7 +54,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1749961736 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
+1750661883 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
 	"funciones.h"
 	<cstdlib>
 	"rlutil.h"
