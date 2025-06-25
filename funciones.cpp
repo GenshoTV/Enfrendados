@@ -208,7 +208,7 @@ void menu()
                         }
                         else
                         {
-                            opciones = 10; /// seguir en el menÃº
+                            opciones = 10; /// seguir en el men�
                         }
                         confirmando = false;
                         break;
