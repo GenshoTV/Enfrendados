@@ -54,7 +54,7 @@ void Creditos()
 
 
 
-void Estadisticas(int &puntosMax,string &jugadorMax)
+void Estadisticas(int puntosMax,string jugadorMax)
 {
     rlutil::locate(30,11);
     cout << "Puntos m ximos";
@@ -78,8 +78,8 @@ void Estadisticas(int &puntosMax,string &jugadorMax)
 };
 void menu()
 {
-    int puntosMax;
-    string jugadorMax;
+    int puntosMax = 0;
+    string jugadorMax = "";
 
 
     int opciones = 10, PosicionY = 0;

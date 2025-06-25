@@ -8,7 +8,7 @@ void QuienEmpiezaRonda(std::string jugador1, std::string jugador2,int &puntosMax
 void turnoJugador(std::string nombre, int& stock, int& puntos, int& dadosUsados,int& stockContrincante);
 void jugar(std::string jugador1, std::string jugador2,int &puntosMax,std::string &jugadorMax);
 int tirarDado(int CarasDados);
-void Estadisticas(int &puntosMax,std::string &jugadorMax);
+void Estadisticas(int puntosMax,std::string jugadorMax);
 void Creditos();
 
 #endif
