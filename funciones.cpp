@@ -139,7 +139,7 @@ void menu()
                 break;
             case 1:
                 rlutil::cls();
-                Cuadro(27,10,67,14);
+                Cuadro(27,10,67 + jugadorMax.length(),14);
                 Estadisticas(puntosMax,jugadorMax);
                 break;
             case 2:
@@ -229,15 +229,48 @@ void PedirNombresJugadores(int &puntosMax,string &jugadorMax)
 {
     string jugador1;
     string jugador2;
-
     rlutil::cls();
     rlutil::locate(30,12);
     cout << "Ingrese su nombre jugador/a 1: ";
-    cin >> jugador1;
+    getline(cin, jugador1);
+
+    while(jugador1 == ""){
+    if(jugador1 == ""){
+        rlutil::locate(23,14);
+        cout << "No has ingresado ning£n nombre, vuelve a intentarlo";
+        rlutil::locate(28,16);
+        cout <<  "Presiona cualquier tecla para continuar";
+        rlutil::anykey();
+        rlutil::cls();
+
+        rlutil::locate(30,12);
+        cout << "Ingrese su nombre jugador/a 1: ";
+        getline(cin, jugador1);
+        continue;
+        }
+    }
     rlutil::cls();
     rlutil::locate(30, 12);
     cout << "Ingrese su nombre jugador/a 2: ";
-    cin >> jugador2;
+    getline(cin, jugador2);
+
+        while(jugador2 == "" || jugador2 == jugador1){
+        rlutil::locate(25, 14);
+        if(jugador2 == ""){
+            cout << "No ingresaste ning£n nombre, volv‚ a intentarlo :D";
+        } else {
+            cout << "El nombre ya fue ingresado por el jugador 1, ingresa otro.";
+        }
+
+        rlutil::locate(28, 16);
+        cout << "Presiona cualquier tecla para continuar";
+        rlutil::anykey();
+        rlutil::cls();
+
+        rlutil::locate(30, 12);
+        cout << "Ingrese su nombre jugador/a 2: ";
+        getline(cin, jugador2);
+    }
     rlutil::cls();
     QuienEmpiezaRonda(jugador1,jugador2,puntosMax,jugadorMax);
 }
