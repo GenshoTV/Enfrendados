@@ -1,29 +1,27 @@
-
 #include "funciones.h"
 #include <cstdlib>
 #include "rlutil.h"
 #include <ctime>
 #include <string>
 #include <vector>
+#include <limits>
 
 using namespace std;
 
 void LineaHorizontal(int inicioX, int finX, int posicionY, string esquinaIzq = "*", string esquinaDer = "*")
 {
-
     rlutil::locate(inicioX, posicionY);
-    cout << esquinaIzq; /// *
+    cout << esquinaIzq;
 
     for (int i = inicioX + 1; i < finX; i++)
     {
         cout << "-";
     }
-    cout << esquinaDer; /// *
+    cout << esquinaDer;
 }
 
 void LineaVertical(int posicionX, int inicioY, int finY) /// Dibuja una linea en vertical en Y
 {
-
     for (int i = inicioY + 1; i < finY; i++)
     {
         rlutil::locate(posicionX, i);
@@ -77,8 +75,6 @@ void Estadisticas(int &puntosMax,string &jugadorMax)
     rlutil::locate(29,16);
     cout << "Presiona cualquier tecla para continuar" << endl;
     rlutil::anykey();
-
-
 };
 
 
@@ -91,12 +87,12 @@ void menu()
 
     int opciones = 10, PosicionY;
 
-    rlutil::hidecursor(); /// Oculta el cursor de la pantalla
+    rlutil::hidecursor();
     do
     {
         rlutil::cls();
         Cuadro(25,11,48,16);
-        rlutil::locate(29,5); /// Ubica en pantalla los couts (x, y)
+        rlutil::locate(29,5);
         cout << "BIENVENIDOS A...\n"
              "    _______   ____________  _______    ______  ___    ____  ____  _____\n"
              "   / ____/ | / / ____/ __ \\/ ____/  | / / __ \\/   |  / __ \\/ __ \\/ ___/ \n"
@@ -106,21 +102,18 @@ void menu()
 
 
         rlutil::locate(30,12);
-        cout << "1 - JUGAR "<< endl; /// 0
+        cout << "1 - JUGAR "<< endl;
         rlutil::locate(30,13);
-        cout << "2 - ESTADISTICAS "<< endl; /// 1
+        cout << "2 - ESTADISTICAS "<< endl;
         rlutil::locate(30,14);
-        cout << "3 - CREDITOS "<< endl; ///2
+        cout << "3 - CREDITOS "<< endl;
         rlutil::locate(30,15);
-        cout << "0 - SALIR " << endl; ///3
+        cout << "0 - SALIR " << endl;
 
-
-        ////////////// X   Y
         rlutil::locate(19,17);
         cout << "Presiona las flechitas para moverte";
         rlutil::locate(23,19);
         cout << "Presiona Enter para aceptar";
-        /// Cursor
         rlutil::locate(26,12 + PosicionY);
         cout << "  ";
         cout << (char)175 << endl;
@@ -128,8 +121,7 @@ void menu()
         int tecla = rlutil::getkey();
         switch(tecla)
         {
-        /// ¨Por qu‚?, por que no quiero que vaya m s de arriba (0 = JUGAR(TOPE))
-        case 14: /// Arriba
+        case 14:
             PosicionY--;
             if(PosicionY < 0)
             {
@@ -498,10 +490,16 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
     {
 
         // Usuario ingresa numero para eleccion.
-        cout << "Eleg¡ el numero de dado a usar (0 para rendirte): ";
+        cout << "Eleg� el numero de dado a usar (0 para rendirte): ";
         int dadosElegidos;
         cin >> dadosElegidos;
 
+          if(cin.fail()){
+            cout << "Elegiste un valor incorrecto, ingresa un numero por favor."<< endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
 
         // verificamos la eleccion si es igual a 0,si es asi penaliza con un dado que se resta del oponente.
         if (dadosElegidos == 0)

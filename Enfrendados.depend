@@ -54,13 +54,14 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750661883 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
+1750866257 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
 	"funciones.h"
 	<cstdlib>
 	"rlutil.h"
 	<ctime>
 	<string>
 	<vector>
+	<limits>
 
 1749934677 source:c:\users\mauro\desktop\proyecto\enfrendados\funciones.cpp
 	"funciones.h"
