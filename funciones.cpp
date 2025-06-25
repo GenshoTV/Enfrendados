@@ -52,8 +52,6 @@ void Creditos()
     cout <<"Leonardo Julian Sanchez LEGAJO: 31926" << endl;
 }
 
-
-
 void Estadisticas(int puntosMax,string jugadorMax)
 {
     rlutil::locate(30,11);
@@ -158,7 +156,7 @@ void menu()
                 while(confirmando)
                 {
                     rlutil::cls();
-                    /// X1 Y1 X2 Y2
+
                     Cuadro(27,10,54,18);
                     rlutil::locate(30, 12);
                     cout << "¨Desea salir del juego?" << endl;
@@ -223,58 +221,23 @@ int tirarDado(int CarasDados)
     return rand() % CarasDados + 1;
 }
 
-
 //pedirmos nombre por cin y se los pasamos a quienEmpiezaRonda()
 void PedirNombresJugadores(int &puntosMax,string &jugadorMax)
 {
     string jugador1;
     string jugador2;
+
     rlutil::cls();
     rlutil::locate(30,12);
     cout << "Ingrese su nombre jugador/a 1: ";
-    getline(cin, jugador1);
-
-    while(jugador1 == ""){
-    if(jugador1 == ""){
-        rlutil::locate(23,14);
-        cout << "No has ingresado ning£n nombre, vuelve a intentarlo";
-        rlutil::locate(28,16);
-        cout <<  "Presiona cualquier tecla para continuar";
-        rlutil::anykey();
-        rlutil::cls();
-
-        rlutil::locate(30,12);
-        cout << "Ingrese su nombre jugador/a 1: ";
-        getline(cin, jugador1);
-        continue;
-        }
-    }
+    cin >> jugador1;
     rlutil::cls();
     rlutil::locate(30, 12);
     cout << "Ingrese su nombre jugador/a 2: ";
-    getline(cin, jugador2);
-
-        while(jugador2 == "" || jugador2 == jugador1){
-        rlutil::locate(25, 14);
-        if(jugador2 == ""){
-            cout << "No ingresaste ning£n nombre, volv‚ a intentarlo :D";
-        } else {
-            cout << "El nombre ya fue ingresado por el jugador 1, ingresa otro.";
-        }
-
-        rlutil::locate(28, 16);
-        cout << "Presiona cualquier tecla para continuar";
-        rlutil::anykey();
-        rlutil::cls();
-
-        rlutil::locate(30, 12);
-        cout << "Ingrese su nombre jugador/a 2: ";
-        getline(cin, jugador2);
-    }
+    cin >> jugador2;
     rlutil::cls();
     QuienEmpiezaRonda(jugador1,jugador2,puntosMax,jugadorMax);
 }
-
 // Realiza el sorteo de quien empieza.
 void QuienEmpiezaRonda(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
 {
@@ -292,7 +255,6 @@ void QuienEmpiezaRonda(string jugador1, string jugador2,int &puntosMax,string &j
     dado2 = tirarDado(6);
     rlutil::locate(30,8);
     cout << "El dado de "<< jugador2 << " es: " << dado2 << endl;
-
 
     while (dado1 == dado2)
     {
@@ -340,7 +302,6 @@ void QuienEmpiezaRonda(string jugador1, string jugador2,int &puntosMax,string &j
     }
 }
 
-
 // funcion jugar se encarga de los stocks de dados y puntaje,le pasa a turnojugador parametros de referencia nombre,stock,puntos,usados,dadoscontrincante.
 void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
 {
@@ -358,7 +319,6 @@ void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
     for (int ronda = 1; ronda <= RONDAS; ronda++)
     {
         cout << "\n                 ======= RONDA " << ronda << " =======\n";
-
         // Turno Jugador 1
         int CantidadUsadosJ1 = 0;
         // pasamos por parametros informacion.
@@ -387,7 +347,6 @@ void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
         cout << jugador2 << ": " << puntosJ2 << " puntos | Dados: " << dadosStockJ2 << endl;
         cout << "========================";
         cout << endl;
-
         // Turno Jugador 2
         int CantidadUsadosJ2 = 0;
         turnoJugador(jugador2, dadosStockJ2, puntosJ2, CantidadUsadosJ2, dadosStockJ1);
@@ -415,7 +374,6 @@ void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
         cout << jugador2 << ": " << puntosJ2 << " puntos | Dados: " << dadosStockJ2 << endl;
         cout << "========================";
         cout << endl;
-
     }
     // Resultado final al salir del ciclo
     cout << "\n======= JUEGO TERMINADO =======\n";
@@ -456,7 +414,6 @@ void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
     rlutil::anykey();
 }
 
-
 //recibimos por parametro las referencias a ser modificadas entre rondas.
 
 void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int &stockDadosContrincante)
@@ -476,7 +433,6 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
     int dado2 = tirarDado(12);
     // resultado de dados
     numeroObjetivo = dado1 + dado2;
-
 
     cout << "\nTurno de: " << nombre << endl;
     cout << "Dados: " << dado1 << " + " << dado2 << " = " << numeroObjetivo << endl;
@@ -510,7 +466,6 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
 
     while (sumaSeleccionada < numeroObjetivo)
     {
-
         // Usuario ingresa numero para eleccion.
         cout << "Eleg¡ el numero de dado a usar (0 para rendirte): ";
         int dadosElegidos;
@@ -528,7 +483,6 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
         {
             cout << endl;
             cout << "Te rendiste. Pierdes tu turno y te han penalizado con un dado.\n";
-
 
             if (stockDadosContrincante > 1)
             {
@@ -565,12 +519,9 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
             continue;
         }
 
-
         usados[dadosElegidos - 1] = true;
 
-
         sumaSeleccionada += dados[dadosElegidos - 1];
-
 
         // mostramos por pantalla los dados elegidos su valor y ademas la suma de los mismos.
 
