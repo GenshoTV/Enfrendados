@@ -76,17 +76,13 @@ void Estadisticas(int &puntosMax,string &jugadorMax)
     cout << "Presiona cualquier tecla para continuar" << endl;
     rlutil::anykey();
 };
-
-
-
 void menu()
 {
     int puntosMax;
     string jugadorMax;
 
 
-    int opciones = 10, PosicionY;
-
+    int opciones = 10, PosicionY = 0;
     rlutil::hidecursor();
     do
     {
@@ -99,7 +95,6 @@ void menu()
              "  / __/ /  |/ / /_  / /_/ / __/ /   |/ / / / / /| | / / / / / / /\\__ \\ \n"
              " / /___/ /|  / __/ / _, _/ /___/ /|  / / _/ / ___ |/ /_/ / /_/ /___/ /\n"
              "/_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/_/  |_/_____/\\____//_____/\n" << endl;
-
 
         rlutil::locate(30,12);
         cout << "1 - JUGAR "<< endl;
@@ -114,8 +109,7 @@ void menu()
         cout << "Presiona las flechitas para moverte";
         rlutil::locate(23,19);
         cout << "Presiona Enter para aceptar";
-        rlutil::locate(26,12 + PosicionY);
-        cout << "  ";
+        rlutil::locate(28,12 + PosicionY);
         cout << (char)175 << endl;
 
         int tecla = rlutil::getkey();
@@ -212,18 +206,13 @@ void menu()
                         }
                         confirmando = false;
                         break;
+                            }
+                        }
                     }
                 }
             }
-            }
         }
-        rlutil::locate(26, 12 + PosicionY);
-        cout << (char)175 << endl;
-        rlutil::cls();
-
-        }
-    }
-    while(opciones != 0);
+    }while(opciones != 0);
 }
 
 
@@ -428,7 +417,7 @@ void jugar(string jugador1, string jugador2,int &puntosMax,string &jugadorMax)
     }
     cout << endl << endl;
     cout << "                   -----------------------------------------------"<< endl;;
-    cout << "                  | Presiona cualquier tecla para volver al menÂ£ |" << endl;
+    cout << "                  | Presiona cualquier tecla para volver al men£ |" << endl;
     cout << "                   -----------------------------------------------" << endl;
     cout << endl;
     rlutil::anykey();
