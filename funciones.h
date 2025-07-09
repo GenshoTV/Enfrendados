@@ -3,7 +3,7 @@
 #include <string>
 
 void menu();
-void PedirNombresJugadores(int &puntosMax,std::string &jugadorMax);
+void PedirNombresJugadores(int &puntosMax,std::string &jugadorMax, std::string &jugador1, std::string &jugador2);
 void QuienEmpiezaRonda(std::string jugador1, std::string jugador2,int &puntosMax,std::string &jugadorMax);
 void turnoJugador(std::string nombre, int& stock, int& puntos, int& dadosUsados,int& stockContrincante);
 void jugar(std::string jugador1, std::string jugador2,int &puntosMax,std::string &jugadorMax);
