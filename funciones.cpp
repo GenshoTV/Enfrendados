@@ -42,6 +42,16 @@ int tirarDado(int CarasDados)
     return rand() % CarasDados + 1;
 }
 
+void MostrarValorDados(int dados[], int &stock){
+    cout << "Valor de dados: ";
+    for (int i = 0; i < stock; i++)
+    {
+        cout << "| " << dados[i] << " ";
+    }
+    cout << "|\n";
+    cout << endl;
+}
+
 void MostrarStockJugadores(int dados[],int &numeroObjetivo, int &stock)
 {
  // Tirar los dados disponibles segun (stock se recibe desde jugar)
@@ -561,9 +571,8 @@ void turnoJugador(string nombre, int &stock, int &puntos, int &dadosUsados, int 
     // Vector booleanos para marcar dados ya utilizados.
     bool usados[MAXIMOSDADOS]={};
 
-    for(int i = 0; i < MAXIMOSDADOS; i++){
-        dados[i] = true;
-    cout << dados[i] << endl;
+    for(int i = 0; i < MAXIMOSDADOS -1; i++){
+        dados[i] = false;
     }
 
     // Inicia en 0 los dados utilizados.
