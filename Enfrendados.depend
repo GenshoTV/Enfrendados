@@ -1,0 +1,164 @@
+# depslib dependency file v1.0
+1748383593 source:c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+
+1748387368 source:c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\funciones.cpp
+	<iostream>
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+
+1748236834 c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\funciones.h
+
+1571584339 c:\users\marti\desktop\cosas de la facultad\programacion\enfrendados\enfrendados\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1749935704 source:c:\users\marti\desktop\facultad\programacion\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+	<windows.h>
+
+1751082133 c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.h
+	<string>
+
+1749935528 c:\users\marti\desktop\facultad\programacion\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1752082593 source:c:\users\marti\desktop\facultad\programacion\enfrendados\funciones.cpp
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+	<string>
+	<vector>
+	<limits>
+
+1749934677 source:c:\users\mauro\desktop\proyecto\enfrendados\funciones.cpp
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+	<string>
+	<vector>
+
+1749933740 c:\users\mauro\desktop\proyecto\enfrendados\funciones.h
+	<string>
+
+1748813792 c:\users\mauro\desktop\proyecto\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1749925116 source:c:\users\mauro\desktop\proyecto\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+	<windows.h>
+
+1749961736 source:c:\users\marti\desktop\carpeta\enfrendados\funciones.cpp
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+	<string>
+	<vector>
+
+1749935737 c:\users\marti\desktop\carpeta\enfrendados\funciones.h
+	<string>
+
+1749935528 c:\users\marti\desktop\carpeta\enfrendados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1749935704 source:c:\users\marti\desktop\carpeta\enfrendados\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+	<windows.h>
+
+1752082897 source:c:\users\sinop\documents\enfrendados-main\enfrendados-main\main.cpp
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+	"rlutil.h"
+	<ctime>
+	<windows.h>
+
+1753149880 c:\users\sinop\documents\enfrendados-main\enfrendados-main\funciones.h
+	<string>
+
+1752082897 c:\users\sinop\documents\enfrendados-main\enfrendados-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1752445566 source:c:\users\sinop\documents\enfrendados-main\enfrendados-main\funciones.cpp
+	"funciones.h"
+	<cstdlib>
+	"rlutil.h"
+	<ctime>
+	<string>
+	<limits>
+
